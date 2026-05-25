@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="w-full h-screen bg-slate-900 text-white p-10">
+      <div class="w-full flex justify-end">
+        <a href="/logout" class="bg-red-500 rounded-md text-sm p-3 inline-block"
+          >Logout</a
+        >
+      </div>
+      <h1 class="mb-5 text-3xl">Edit posts</h1>
+
+      <h3 class="text-zinc-500 text-sm mb-5">Edit your post</h3>
+      <form action="/post/<%=post._id%>/update" method="post">
+        <textarea
+          name="content"
+          placeholder="Whats on your mind"
+          class="resize-none p-2 rounded-md bg-transparent outline-none border-1 w-1/2 block mb-2"
+        >
+<%=post.content%></textarea
+        >
+        <input
+          type="submit"
+          value="Update post"
+          class="block py-2 px-4 rounded-md bg-blue-700 cursor-pointer text-sm"
+        />
+      </form>
+    </div>
+  </body>
+</html>
