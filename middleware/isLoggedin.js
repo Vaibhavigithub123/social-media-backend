@@ -7,7 +7,7 @@ const isLoggedin = (req, res, next) => {
     return res.redirect("/login");
   }
   try {
-    let data = jwt.verify(req.cookies.token, "ConfidentialKey");
+    let data = jwt.verify(req.cookies.token, process.env.JWT_SECRET);
     req.user = data;
     next();
   } catch (err) {
